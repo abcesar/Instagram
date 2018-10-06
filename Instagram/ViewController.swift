@@ -11,17 +11,19 @@ import Parse
 
 class ViewController: UIViewController {
 
+    var window: UIWindow?
     
-    @IBAction func Logout(_ sender: Any) {
-        
+    
+    @IBAction func logoutButton(_ sender: Any) {
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) in
+            // PFUser.current() will now be nil
+            }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
     }
-
-    
     
 }
 
